@@ -3,6 +3,7 @@ import "./globals.css";
 import "./cinematic.css";
 import "@/style/visual-engine-v3.css";
 import "@/style/content-v3.css";
+import "@/style/hero-v4.css";
 
 export const metadata: Metadata = {
   title: "Maya — AI Systems Engineer",
