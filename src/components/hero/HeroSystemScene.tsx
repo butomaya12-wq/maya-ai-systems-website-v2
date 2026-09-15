@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { animated, useSpring } from "@react-spring/web";
+import { animated, to, useSpring } from "@react-spring/web";
 import { useEffect, useMemo, useRef } from "react";
+import type { PointerEvent as ReactPointerEvent } from "react";
 import { siteContent } from "@/data/site-content";
 
 type Particle = {
@@ -137,7 +138,7 @@ export function HeroSystemScene() {
     };
   }, [mx, my, particles]);
 
-  const onPointerMove = (event: React.PointerEvent<HTMLElement>) => {
+  const onPointerMove = (event: ReactPointerEvent<HTMLElement>) => {
     if (event.pointerType === "touch") return;
     const rect = event.currentTarget.getBoundingClientRect();
     const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
@@ -170,9 +171,7 @@ export function HeroSystemScene() {
 
       <animated.div
         className="system-universe"
-        style={{
-          transform: mx.to((x) => `translate3d(${x * 0.7}rem,0,0)`).to((value) => value),
-        }}
+        style={{ transform: to([mx, my], (x, y) => `translate3d(${x * 0.7}rem, ${y * 0.35}rem, 0)`) }}
         aria-label="Structured system graph"
       >
         <div className="orbit orbit-a" aria-hidden="true" />
@@ -180,9 +179,7 @@ export function HeroSystemScene() {
         <div className="orbit orbit-c" aria-hidden="true" />
         <animated.div
           className="system-core-v2"
-          style={{
-            transform: mx.to((x) => `translate(-50%,-50%) rotateY(${x * 7}deg)`),
-          }}
+          style={{ transform: to([mx, my], (x, y) => `translate(-50%,-50%) rotateX(${-y * 5}deg) rotateY(${x * 7}deg)`) }}
         >
           <span className="core-label">SYSTEM</span>
           <span className="core-glow" aria-hidden="true" />
@@ -192,7 +189,7 @@ export function HeroSystemScene() {
             key={module}
             className={`system-node system-node-${index + 1}`}
             style={{
-              transform: mx.to((x) => `translate3d(${x * ((index % 3) - 1) * 0.55}rem, ${my.get() * ((index % 2) ? 0.3 : -0.25)}rem, 0)`),
+              transform: to([mx, my], (x, y) => `translate3d(${x * ((index % 3) - 1) * 0.55}rem, ${y * ((index % 2) ? 0.3 : -0.25)}rem, 0)`),
             }}
           >
             {module}
