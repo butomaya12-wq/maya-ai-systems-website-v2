@@ -1,13 +1,13 @@
 export const siteContent = {
-  nav: ["Work", "Approach", "Notes", "About", "Contact"],
+  nav: ["Work", "Approach", "About", "Contact"],
   hero: {
     eyebrow: "MAYA · AI SYSTEMS ENGINEER",
     title: "AI SYSTEMS BETWEEN IDEA & RESULT",
-    body: "I design and build applied AI and automation systems that turn complex business processes into verifiable outcomes.",
+    body: "I design and build applied AI systems that turn complex business processes into verifiable outcomes.",
     primaryCta: "View work",
     secondaryCta: "Let’s talk",
-    modules: ["Data", "Process", "People", "AI", "Rules", "Integration", "Evidence", "Result"],
-    proof: ["Paid B2B delivery", "35 verified capabilities", "Commercial system", "Public engineering builds"],
+    modules: ["Voice", "Photo", "Sheet", "API", "Rule", "Message", "Approval"],
+    proof: ["Paid B2B system", "35 verified capabilities", "Commercial V1 delivered", "Public engineering builds"],
   },
   commercialCase: {
     label: "COMMERCIAL SYSTEM",
