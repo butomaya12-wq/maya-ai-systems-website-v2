@@ -1,0 +1,178 @@
+/* Hero V4 — material realism, quieter overlays, tighter editorial rhythm */
+
+.maya-atmosphere-canvas{
+  filter:saturate(.92) contrast(1.12) brightness(.92);
+}
+.maya-light-rays{
+  opacity:.38!important;
+  mix-blend-mode:screen!important;
+  transform:rotate(-8deg) scale(1.08)!important;
+}
+.maya-light-glint{
+  opacity:.24!important;
+  mix-blend-mode:plus-lighter!important;
+}
+.maya-light-bokeh{opacity:.075!important}
+.maya-grain{opacity:.115!important}
+
+.hero-cinematic{
+  background:
+    radial-gradient(circle at 72% 43%,rgba(125,79,232,.085),transparent 23%),
+    linear-gradient(90deg,rgba(3,4,7,.88) 0%,rgba(3,4,7,.48) 36%,rgba(3,4,7,.07) 71%,rgba(3,4,7,.21) 100%)!important;
+}
+.hero-cinematic:after{
+  background:
+    radial-gradient(ellipse at 71% 45%,transparent 0 22%,rgba(2,3,6,.14) 49%,rgba(2,3,6,.42) 78%),
+    linear-gradient(180deg,rgba(5,6,10,.03),rgba(5,6,10,.28))!important;
+}
+.hero-copy-cinematic{z-index:6!important}
+.hero-copy-cinematic h1{
+  font-size:clamp(3.9rem,5.2vw,6.3rem)!important;
+  max-width:10.7ch!important;
+  text-shadow:0 1.2rem 4rem rgba(0,0,0,.62)!important;
+}
+.hero-copy-cinematic .hero-body{max-width:30rem!important}
+
+.system-universe-v4{
+  z-index:7!important;
+  width:min(50vw,54rem)!important;
+  height:min(76vh,49rem)!important;
+  filter:none!important;
+}
+.system-universe-v4:before,
+.system-universe-v4:after{display:none!important}
+.system-center-label{
+  position:absolute;
+  left:50%;
+  top:49%;
+  z-index:9;
+  padding:.38rem .62rem;
+  border:1px solid rgba(221,208,255,.18);
+  border-radius:999px;
+  background:rgba(10,9,16,.24);
+  box-shadow:0 0 2.4rem rgba(163,111,255,.22),inset 0 1px 0 rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+  color:rgba(241,235,255,.8);
+  font-size:.55rem;
+  letter-spacing:.34em;
+  font-weight:300;
+  pointer-events:none;
+}
+.system-universe-v4 .system-node{
+  min-width:6.6rem;
+  min-height:3.05rem;
+  display:grid;
+  place-items:center;
+  padding:.55rem .8rem!important;
+  border:1px solid rgba(224,214,255,.26)!important;
+  background:
+    linear-gradient(150deg,rgba(228,218,255,.12),rgba(117,91,157,.065) 34%,rgba(7,8,13,.38) 74%)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.16),
+    inset 0 -1px 0 rgba(153,105,255,.06),
+    0 1rem 2.8rem rgba(0,0,0,.2),
+    0 0 2.6rem rgba(128,80,219,.08)!important;
+  backdrop-filter:blur(18px) saturate(1.28)!important;
+  color:rgba(245,241,255,.82)!important;
+  font-size:.58rem!important;
+  font-weight:300!important;
+  letter-spacing:.18em!important;
+  overflow:hidden;
+}
+.system-universe-v4 .system-node:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background:linear-gradient(115deg,rgba(255,255,255,.16),transparent 28%,transparent 72%,rgba(173,128,255,.09));
+  opacity:.5;
+  pointer-events:none;
+}
+.system-universe-v4 .system-node:after{
+  width:.34rem!important;
+  height:.34rem!important;
+  background:#c7aaff!important;
+  box-shadow:0 0 1.15rem rgba(159,105,255,.95)!important;
+}
+
+/* Remove the older 2D/CSS hero geometry now that WebGL owns the object. */
+.hero-particle-canvas,.hero-ray,.hero-noise,
+.system-core-v2,.hero-fragment,.orbit{display:none!important}
+
+.proof-strip-cinematic{
+  background:linear-gradient(90deg,rgba(5,6,10,.28),rgba(5,6,10,.06),rgba(5,6,10,.18));
+  backdrop-filter:blur(7px);
+}
+
+/* Better transition out of the debris-heavy hero/case world. */
+.systems-cinematic,
+.selected-cinematic,
+.thinking-cinematic,
+.principles-cinematic,
+.notes-cinematic,
+.about-cinematic,
+.contact-cinematic{
+  background:rgba(3,4,7,.965)!important;
+}
+
+/* Selected systems heading should never be clipped under the fixed header. */
+.selected-cinematic{
+  padding-top:5.8rem!important;
+  padding-bottom:5.8rem!important;
+}
+.selected-heading{
+  display:grid!important;
+  grid-template-columns:1fr auto!important;
+  align-items:end!important;
+  gap:3rem!important;
+  margin-bottom:2.8rem!important;
+}
+.selected-heading h2{
+  position:static!important;
+  inset:auto!important;
+  transform:none!important;
+  margin:0!important;
+  line-height:.95!important;
+}
+
+/* Compress the editorial half so the page feels like one film, not stacked screens. */
+.thinking-cinematic{
+  min-height:auto!important;
+  padding-top:5rem!important;
+  padding-bottom:5rem!important;
+}
+.principles-cinematic{
+  min-height:auto!important;
+  padding-top:3.5rem!important;
+  padding-bottom:3.5rem!important;
+}
+.notes-cinematic{
+  min-height:auto!important;
+  padding-top:4.4rem!important;
+  padding-bottom:4.4rem!important;
+}
+.about-cinematic{
+  min-height:auto!important;
+  padding-top:4.8rem!important;
+  padding-bottom:4.8rem!important;
+}
+.contact-cinematic{
+  min-height:auto!important;
+  padding-top:5.2rem!important;
+  padding-bottom:5.2rem!important;
+}
+
+@media (max-width:900px){
+  .system-universe-v4{width:52vw!important;height:62vh!important;opacity:.78}
+  .system-center-label{display:none}
+  .system-universe-v4 .system-node{min-width:5.2rem;min-height:2.55rem;font-size:.5rem!important}
+  .selected-heading{grid-template-columns:1fr!important}
+}
+
+@media (max-width:767px){
+  .maya-light-rays{opacity:.24!important}
+  .maya-light-glint{opacity:.14!important}
+  .system-universe-v4{opacity:.42;right:-18vw!important;width:90vw!important}
+  .hero-copy-cinematic{position:relative;z-index:10}
+  .thinking-cinematic,.selected-cinematic,.notes-cinematic,.about-cinematic,.contact-cinematic{padding-top:4rem!important;padding-bottom:4rem!important}
+}
