@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HeroSystemScene } from "@/components/hero/HeroSystemScene";
 import { siteContent } from "@/data/site-content";
 
 export function HomeView() {
@@ -12,26 +13,7 @@ export function HomeView() {
         <Link className="ghost-button" href="#contact">LET’S TALK</Link>
       </header>
 
-      <section id="top" className="hero section-shell">
-        <div className="hero-copy">
-          <p className="section-index">01 · FROM COMPLEXITY TO CLARITY</p>
-          <h1>{siteContent.hero.title}</h1>
-          <p className="hero-body">{siteContent.hero.body}</p>
-          <div className="actions">
-            <Link className="solid-button" href="#work">{siteContent.hero.primaryCta}</Link>
-            <Link className="ghost-button" href="#contact">{siteContent.hero.secondaryCta}</Link>
-          </div>
-        </div>
-        <div className="system-orbit" aria-label="System inputs and outputs">
-          <div className="core">SYSTEM</div>
-          {siteContent.hero.modules.map((module, index) => (
-            <span key={module} className={`module module-${index + 1}`}>{module}</span>
-          ))}
-        </div>
-        <div className="proof-strip">
-          {siteContent.hero.proof.map((item) => <span key={item}>● {item}</span>)}
-        </div>
-      </section>
+      <HeroSystemScene />
 
       <section id="work" className="case section-shell">
         <p className="section-index">02 · REAL SYSTEM / REAL WORK</p>
