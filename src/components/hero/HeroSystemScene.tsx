@@ -177,6 +177,9 @@ export function HeroSystemScene() {
         <div className="orbit orbit-a" aria-hidden="true" />
         <div className="orbit orbit-b" aria-hidden="true" />
         <div className="orbit orbit-c" aria-hidden="true" />
+        {Array.from({ length: 6 }, (_, index) => (
+          <span key={index} className={`hero-fragment hero-fragment-${index + 1}`} aria-hidden="true" />
+        ))}
         <animated.div
           className="system-core-v2"
           style={{ transform: to([mx, my], (x, y) => `translate(-50%,-50%) rotateX(${-y * 5}deg) rotateY(${x * 7}deg)`) }}
