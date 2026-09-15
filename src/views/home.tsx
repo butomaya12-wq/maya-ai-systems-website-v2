@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { HeroSystemScene } from "@/components/hero/HeroSystemScene";
 import { Reveal } from "@/components/motion/Reveal";
+import { MayaAtmosphere } from "@/components/scene/MayaAtmosphere";
 import { ProjectVisual, SystemClassVisual, WorkflowStageVisual } from "@/components/visual/VisualBlocks";
 import { siteContent } from "@/data/site-content";
 
@@ -11,7 +12,9 @@ const projectLinks = [
 
 export function HomeView() {
   return (
-    <main>
+    <main className="maya-v3">
+      <MayaAtmosphere />
+
       <header className="site-header">
         <Link className="brand" href="#top">MAYA <span>AI SYSTEMS ENGINEER</span></Link>
         <nav aria-label="Primary navigation">
@@ -27,7 +30,7 @@ export function HomeView() {
           <p className="section-index">02 · REAL SYSTEM / REAL WORK</p>
           <div className="case-head">
             <div>
-              <p className="pill">{siteContent.commercialCase.label}</p>
+              <div className="case-label-row"><p className="pill">{siteContent.commercialCase.label}</p><span>PAID B2B DELIVERY</span></div>
               <h2>{siteContent.commercialCase.title}</h2>
               <p>{siteContent.commercialCase.body}</p>
             </div>
@@ -50,12 +53,12 @@ export function HomeView() {
         </div>
 
         <Reveal className="case-proof-bar">
-          <span>FIELD CAPTURE</span><i />
-          <span>CALCULATION</span><i />
-          <span>REVIEW</span><i />
-          <span>APPROVAL</span><i />
-          <span>DOCUMENTS</span><i />
-          <span>EXECUTION</span>
+          <span>Полевой workflow</span><i />
+          <span>Расчётный контур</span><i />
+          <span>Workflow менеджера</span><i />
+          <span>Locked snapshot</span><i />
+          <span>3 role-specific PDFs</span><i />
+          <span>ADMIN / MEASURER / MANAGER</span>
         </Reveal>
       </section>
 
@@ -99,7 +102,7 @@ export function HomeView() {
                   <p className="meta">{item.meta}</p>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
-                  <Link className="project-link" href={projectLinks[index]} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></Link>
+                  <div className="project-status-row"><span>{index === 0 ? "PUBLIC BUILD" : "HACKATHON PROTOTYPE"}</span><Link className="project-link" href={projectLinks[index]} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></Link></div>
                 </div>
               </article>
             </Reveal>
@@ -115,14 +118,11 @@ export function HomeView() {
         </Reveal>
         <Reveal className="thinking-diagram" delay={110}>
           <div className="decision-path" aria-hidden="true">
-            <span className="decision-node">EVENT</span>
-            <i />
-            <span className="decision-node">STATE</span>
-            <i />
-            <span className="decision-node">RULE</span>
-            <i />
-            <span className="decision-node decision-node-accent">AI?</span>
-            <i />
+            <span className="decision-node">EVENT</span><i />
+            <span className="decision-node">STATE</span><i />
+            <span className="decision-node">RULE</span><i />
+            <span className="decision-node decision-node-accent">AI?</span><i />
+            <span className="decision-node">VALIDATE</span><i />
             <span className="decision-node">EVIDENCE</span>
           </div>
           <p>AI появляется только там, где deterministic logic уже недостаточно.</p>
@@ -143,8 +143,12 @@ export function HomeView() {
       <section id="notes" className="notes notes-cinematic section-shell">
         <Reveal className="compact-editorial">
           <p className="section-index">07 · NOTES</p>
-          <h2>Engineering notes coming next.</h2>
-          <div className="editorial-line"><span>PROCESS DESIGN</span><span>HUMAN-IN-THE-LOOP</span><span>FIELD-TO-EXECUTION</span></div>
+          <h2>Последние статьи</h2>
+          <div className="notes-preview-grid">
+            <article><span>PROCESS DESIGN</span><h3>Why automation fails before n8n</h3><p>Разбор принципа: сначала процесс, потом инструмент.</p></article>
+            <article><span>HUMAN-IN-THE-LOOP</span><h3>When AI should not make the decision</h3><p>Где система должна вернуть authority человеку.</p></article>
+            <article><span>WORKING HYPOTHESIS</span><h3>Field-to-Execution</h3><p>Как данные с объекта становятся расчётом, approval и handoff.</p></article>
+          </div>
         </Reveal>
       </section>
 
@@ -152,7 +156,7 @@ export function HomeView() {
         <Reveal className="compact-editorial about-grid">
           <p className="section-index">08 · ABOUT</p>
           <h2>I build systems that should still make sense after the demo.</h2>
-          <p className="about-note">Applied AI · Operational workflows · Agentic systems · Integrations · Evidence-driven engineering</p>
+          <p className="about-note">Проектирую прикладные AI- и automation-системы вокруг реальных бизнес-процессов: роли, данные, состояния, правила, интеграции, validation и handoff. За сайтом стоят paid B2B delivery и публичные engineering builds — без придуманных ROI и неподтверждённых claims.</p>
         </Reveal>
       </section>
 
@@ -160,8 +164,9 @@ export function HomeView() {
         <Reveal>
           <p className="section-index">09 · CONTACT</p>
           <h2>Есть сложный процесс, который должен стать системой?</h2>
-          <p className="contact-note">Selected project / subcontract / technical collaboration</p>
+          <p className="contact-note">Короткий разбор задачи → понимание процесса → решение, имеет ли смысл автоматизация.</p>
           <Link className="solid-button" href="https://t.me/systemsmaya">Написать в Telegram <span aria-hidden="true">→</span></Link>
+          <span className="contact-mode">Selected project / subcontract / technical collaboration</span>
         </Reveal>
       </section>
     </main>
