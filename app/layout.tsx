@@ -8,6 +8,7 @@ import "@/style/hero-focus-v5.css";
 import "@/style/template-fusion-v1.css";
 import "@/style/hero-case-bridge.css";
 import "@/style/commercial-case-story.css";
+import "@/style/process-principles.css";
 
 export const metadata: Metadata = {
   title: "Maya — AI Systems Engineer",
