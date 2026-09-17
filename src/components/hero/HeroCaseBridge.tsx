@@ -35,10 +35,10 @@ export function HeroCaseBridge() {
         <span className="hero-case-bridge-line hero-case-bridge-line-b" />
         <span className="hero-case-bridge-node hero-case-bridge-node-c" />
       </div>
-      <div className="hero-case-bridge-label hero-case-bridge-label-left">SIGNAL</div>
-      <div className="hero-case-bridge-label hero-case-bridge-label-center">STRUCTURE</div>
-      <div className="hero-case-bridge-label hero-case-bridge-label-right">DELIVERY</div>
-      <div className="hero-case-bridge-caption">FROM SYSTEM LOGIC TO PAID B2B DELIVERY</div>
+      <div className="hero-case-bridge-label hero-case-bridge-label-left">СИГНАЛ</div>
+      <div className="hero-case-bridge-label hero-case-bridge-label-center">СТРУКТУРА</div>
+      <div className="hero-case-bridge-label hero-case-bridge-label-right">ВНЕДРЕНИЕ</div>
+      <div className="hero-case-bridge-caption">ОТ ЛОГИКИ СИСТЕМЫ К ОПЛАЧЕННОМУ B2B-РЕЗУЛЬТАТУ</div>
     </div>
   );
 }
