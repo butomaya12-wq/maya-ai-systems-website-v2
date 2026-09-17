@@ -6,6 +6,7 @@ import "@/style/content-v3.css";
 import "@/style/hero-v4.css";
 import "@/style/hero-focus-v5.css";
 import "@/style/template-fusion-v1.css";
+import "@/style/hero-case-bridge.css";
 
 export const metadata: Metadata = {
   title: "Maya — AI Systems Engineer",
