@@ -19,7 +19,7 @@ export function HomeView() {
       <MayaAtmosphere />
 
       <header className="site-header">
-        <Link className="brand" href="#top">MAYA <span>СИСТЕМНЫЙ АНАЛИТИК · АВТОМАТИЗАЦИЯ</span></Link>
+        <Link className="brand" href="#top">MAYA <span>РАЗРАБОТЧИК КАСТОМНЫХ СИСТЕМ</span></Link>
         <nav aria-label="Основная навигация">
           {siteContent.nav.map((item) => <Link key={item.label} href={item.href}>{item.label}</Link>)}
         </nav>
