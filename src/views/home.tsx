@@ -19,11 +19,11 @@ export function HomeView() {
       <MayaAtmosphere />
 
       <header className="site-header">
-        <Link className="brand" href="#top">MAYA <span>AI SYSTEMS ENGINEER</span></Link>
-        <nav aria-label="Primary navigation">
-          {siteContent.nav.map((item) => <Link key={item} href={`#${item.toLowerCase()}`}>{item}</Link>)}
+        <Link className="brand" href="#top">MAYA <span>СИСТЕМНЫЙ АНАЛИТИК · АВТОМАТИЗАЦИЯ</span></Link>
+        <nav aria-label="Основная навигация">
+          {siteContent.nav.map((item) => <Link key={item.label} href={item.href}>{item.label}</Link>)}
         </nav>
-        <Link className="ghost-button" href="#contact">LET’S TALK</Link>
+        <Link className="ghost-button" href="#contact">ОБСУДИТЬ ЗАДАЧУ</Link>
       </header>
 
       <HeroSystemScene />
@@ -31,10 +31,10 @@ export function HomeView() {
 
       <section id="work" className="case case-cinematic section-shell">
         <Reveal>
-          <p className="section-index">02 · REAL SYSTEM / REAL WORK</p>
+          <p className="section-index">02 · РЕАЛЬНАЯ СИСТЕМА / РЕАЛЬНАЯ РАБОТА</p>
           <div className="case-head">
             <div>
-              <div className="case-label-row"><p className="pill">{siteContent.commercialCase.label}</p><span>PAID B2B DELIVERY</span></div>
+              <div className="case-label-row"><p className="pill">{siteContent.commercialCase.label}</p><span>ОПЛАЧЕННАЯ B2B-РАЗРАБОТКА</span></div>
               <h2>{siteContent.commercialCase.title}</h2>
               <p>{siteContent.commercialCase.body}</p>
             </div>
@@ -45,19 +45,19 @@ export function HomeView() {
         <CommercialCaseStory />
 
         <Reveal className="case-proof-bar">
-          <span>Полевой workflow</span><i />
+          <span>Полевой процесс</span><i />
           <span>Расчётный контур</span><i />
-          <span>Workflow менеджера</span><i />
-          <span>Locked snapshot</span><i />
-          <span>Role-specific PDFs</span><i />
-          <span>ADMIN / MEASURER / MANAGER</span>
+          <span>Проверка менеджером</span><i />
+          <span>Зафиксированная версия</span><i />
+          <span>Документы по ролям</span><i />
+          <span>АДМИН / ЗАМЕРЩИК / МЕНЕДЖЕР</span>
         </Reveal>
       </section>
 
       <section id="approach" className="systems systems-cinematic section-shell">
         <Reveal className="section-heading-row">
           <div>
-            <p className="section-index">03 · SYSTEMS I BUILD</p>
+            <p className="section-index">03 · КАКИЕ СИСТЕМЫ Я СОЗДАЮ</p>
             <h2>Три класса систем. Один подход.</h2>
           </div>
           <p className="section-side-note">Разные задачи. Общая логика — реальный результат, который можно проверить, использовать и развивать.</p>
@@ -82,7 +82,7 @@ export function HomeView() {
 
       <section className="selected selected-cinematic section-shell">
         <Reveal className="selected-heading">
-          <p className="section-index">04 · SELECTED SYSTEMS</p>
+          <p className="section-index">04 · ДРУГИЕ ПРОЕКТЫ</p>
           <h2>Другие системы</h2>
         </Reveal>
         <div className="selected-grid project-grid">
@@ -94,7 +94,7 @@ export function HomeView() {
                   <p className="meta">{item.meta}</p>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
-                  <div className="project-status-row"><span>{index === 0 ? "PUBLIC BUILD" : "HACKATHON PROTOTYPE"}</span><Link className="project-link" href={projectLinks[index]} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></Link></div>
+                  <div className="project-status-row"><span>{index === 0 ? "ПУБЛИЧНАЯ РАЗРАБОТКА" : "ПРОТОТИП ДЛЯ ХАКАТОНА"}</span><Link className="project-link" href={projectLinks[index]} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></Link></div>
                 </div>
               </article>
             </Reveal>
@@ -106,31 +106,31 @@ export function HomeView() {
 
       <section id="notes" className="notes notes-cinematic section-shell">
         <Reveal className="compact-editorial">
-          <p className="section-index">07 · NOTES</p>
+          <p className="section-index">07 · ЗАМЕТКИ</p>
           <h2>Последние статьи</h2>
           <div className="notes-preview-grid">
-            <article><span>PROCESS DESIGN</span><h3>Why automation fails before n8n</h3><p>Разбор принципа: сначала процесс, потом инструмент.</p></article>
-            <article><span>HUMAN-IN-THE-LOOP</span><h3>When AI should not make the decision</h3><p>Где система должна вернуть authority человеку.</p></article>
-            <article><span>WORKING HYPOTHESIS</span><h3>Field-to-Execution</h3><p>Как данные с объекта становятся расчётом, approval и handoff.</p></article>
+            <article><span>ПРОЕКТИРОВАНИЕ ПРОЦЕССОВ</span><h3>Почему автоматизация ломается ещё до n8n</h3><p>Разбор принципа: сначала процесс, потом инструмент.</p></article>
+            <article><span>ЧЕЛОВЕК В КОНТУРЕ</span><h3>Когда AI не должен принимать решение</h3><p>Где система должна возвращать право решения человеку.</p></article>
+            <article><span>РАБОЧАЯ ГИПОТЕЗА</span><h3>От поля к выполнению</h3><p>Как данные с объекта становятся расчётом, согласованием и передачей в работу.</p></article>
           </div>
         </Reveal>
       </section>
 
       <section id="about" className="about about-cinematic section-shell">
         <Reveal className="compact-editorial about-grid">
-          <p className="section-index">08 · ABOUT</p>
-          <h2>I build systems that should still make sense after the demo.</h2>
-          <p className="about-note">Проектирую прикладные AI- и automation-системы вокруг реальных бизнес-процессов: роли, данные, состояния, правила, интеграции, validation и handoff. За сайтом стоят paid B2B delivery и публичные engineering builds — без придуманных ROI и неподтверждённых claims.</p>
+          <p className="section-index">08 · ОБО МНЕ</p>
+          <h2>Я создаю системы, которые остаются понятными и после демонстрации.</h2>
+          <p className="about-note">Проектирую прикладные AI- и automation-системы вокруг реальных бизнес-процессов: роли, данные, состояния, правила, интеграции, проверка и передача в работу. За сайтом стоят оплаченный B2B-проект и публичные инженерные разработки — без придуманных ROI и неподтверждённых заявлений.</p>
         </Reveal>
       </section>
 
       <section id="contact" className="contact contact-cinematic section-shell">
         <Reveal>
-          <p className="section-index">09 · CONTACT</p>
+          <p className="section-index">09 · КОНТАКТЫ</p>
           <h2>Есть сложный процесс, который должен стать системой?</h2>
           <p className="contact-note">Короткий разбор задачи → понимание процесса → решение, имеет ли смысл автоматизация.</p>
           <Link className="solid-button" href="https://t.me/systemsmaya">Написать в Telegram <span aria-hidden="true">→</span></Link>
-          <span className="contact-mode">Selected project / subcontract / technical collaboration</span>
+          <span className="contact-mode">Проекты · субподряд · техническое сотрудничество</span>
         </Reveal>
       </section>
     </main>
