@@ -2,6 +2,7 @@ import Link from "next/link";
 import { HeroSystemScene } from "@/components/hero/HeroSystemScene";
 import { HeroCaseBridge } from "@/components/hero/HeroCaseBridge";
 import { CommercialCaseStory } from "@/components/case/CommercialCaseStory";
+import { ProcessPrinciples } from "@/components/process/ProcessPrinciples";
 import { Reveal } from "@/components/motion/Reveal";
 import { MayaAtmosphere } from "@/components/scene/MayaAtmosphere";
 import { ProjectVisual, SystemClassVisual } from "@/components/visual/VisualBlocks";
@@ -101,35 +102,7 @@ export function HomeView() {
         </div>
       </section>
 
-      <section className="thinking thinking-cinematic section-shell">
-        <Reveal className="thinking-copy">
-          <p className="section-index">05 · HOW I THINK</p>
-          <h2>Сначала процесс. Потом автоматизация.</h2>
-          <p>AI не исправляет неясную бизнес-логику. Сначала — роли, данные, состояния, правила и точки принятия решения. Затем — автоматизация и AI там, где они действительно нужны.</p>
-        </Reveal>
-        <Reveal className="thinking-diagram" delay={110}>
-          <div className="decision-path" aria-hidden="true">
-            <span className="decision-node">EVENT</span><i />
-            <span className="decision-node">STATE</span><i />
-            <span className="decision-node">RULE</span><i />
-            <span className="decision-node decision-node-accent">AI?</span><i />
-            <span className="decision-node">VALIDATE</span><i />
-            <span className="decision-node">EVIDENCE</span>
-          </div>
-          <p>AI появляется только там, где deterministic logic уже недостаточно.</p>
-        </Reveal>
-      </section>
-
-      <section className="principles principles-cinematic section-shell">
-        <Reveal>
-          <p className="section-index">06 · PRINCIPLES</p>
-          <div className="principle-row">
-            {siteContent.principles.map((p, index) => (
-              <span key={p}><i className={`principle-mark principle-mark-${index + 1}`} aria-hidden="true" />{p}</span>
-            ))}
-          </div>
-        </Reveal>
-      </section>
+      <ProcessPrinciples />
 
       <section id="notes" className="notes notes-cinematic section-shell">
         <Reveal className="compact-editorial">
