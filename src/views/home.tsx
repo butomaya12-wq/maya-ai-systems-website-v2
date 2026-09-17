@@ -4,7 +4,6 @@ import { HeroCaseBridge } from "@/components/hero/HeroCaseBridge";
 import { CommercialCaseStory } from "@/components/case/CommercialCaseStory";
 import { ProcessPrinciples } from "@/components/process/ProcessPrinciples";
 import { Reveal } from "@/components/motion/Reveal";
-import { MayaAtmosphere } from "@/components/scene/MayaAtmosphere";
 import { ProjectVisual, SystemClassVisual } from "@/components/visual/VisualBlocks";
 import { siteContent } from "@/data/site-content";
 
@@ -16,8 +15,6 @@ const projectLinks = [
 export function HomeView() {
   return (
     <main className="maya-v3">
-      <MayaAtmosphere />
-
       <header className="site-header">
         <Link className="brand" href="#top">MAYA <span>РАЗРАБОТЧИК КАСТОМНЫХ СИСТЕМ</span></Link>
         <nav aria-label="Основная навигация">
