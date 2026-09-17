@@ -3,38 +3,38 @@
 const steps = [
   {
     n: "01",
-    kicker: "FIELD INPUT",
+    kicker: "ПОЛЕВОЙ ВВОД",
     title: "Замер становится структурированными данными",
     body: "Полевой ввод не заканчивается формой. Размеры, зоны, позиции и обязательные комментарии переходят в единый расчётный контур.",
     visual: "capture",
-    badges: ["MEASURER", "ZONES", "INPUT RULES"],
+    badges: ["ЗАМЕРЩИК", "ЗОНЫ", "ПРАВИЛА ВВОДА"],
     evidence: ["Размеры и зоны", "Обязательные комментарии", "Единая структура объекта"],
   },
   {
     n: "02",
-    kicker: "BUSINESS LOGIC",
+    kicker: "БИЗНЕС-ЛОГИКА",
     title: "Данные проходят через правила и расчёты",
     body: "Система считает площади, материалы и стоимость по заданной логике, сохраняя структуру объекта и основания для дальнейшей проверки.",
     visual: "logic",
-    badges: ["CALCULATION", "CATALOG", "RULES"],
+    badges: ["РАСЧЁТ", "КАТАЛОГ", "ПРАВИЛА"],
     evidence: ["Площади", "Материалы", "Стоимость и каталог"],
   },
   {
     n: "03",
-    kicker: "HUMAN REVIEW",
+    kicker: "ПРОВЕРКА ЧЕЛОВЕКОМ",
     title: "Менеджер проверяет и утверждает версию",
     body: "Человек остаётся в контуре принятия решения: проверяет данные, вносит корректировки и фиксирует утверждённую версию перед передачей дальше.",
     visual: "review",
-    badges: ["MANAGER", "REVIEW", "APPROVAL"],
-    evidence: ["Проверка менеджером", "Корректировки", "Locked approved state"],
+    badges: ["МЕНЕДЖЕР", "ПРОВЕРКА", "УТВЕРЖДЕНИЕ"],
+    evidence: ["Проверка менеджером", "Корректировки", "Зафиксированное утверждённое состояние"],
   },
   {
     n: "04",
-    kicker: "EXECUTION OUTPUT",
+    kicker: "РЕЗУЛЬТАТ ДЛЯ РАБОТЫ",
     title: "Утверждённая версия превращается в рабочие документы",
-    body: "После approval система формирует документы для разных участников и передаёт результат в следующий операционный шаг без повторного ручного пересбора данных.",
+    body: "После утверждения система формирует документы для разных участников и передаёт результат в следующий операционный шаг без повторного ручного пересбора данных.",
     visual: "output",
-    badges: ["PDF", "LOCKED VERSION", "HANDOFF"],
+    badges: ["PDF", "ЗАФИКСИРОВАННАЯ ВЕРСИЯ", "ПЕРЕДАЧА"],
     evidence: ["Клиентский документ", "Документ для монтажа", "Передача в выполнение"],
   },
 ] as const;
@@ -54,10 +54,10 @@ function StoryVisual({ kind }: { kind: (typeof steps)[number]["visual"] }) {
   if (kind === "logic") {
     return (
       <div className="case-story-visual logic" aria-hidden="true">
-        <span className="logic-node logic-node-a">m²</span>
-        <span className="logic-node logic-node-b">qty</span>
+        <span className="logic-node logic-node-a">м²</span>
+        <span className="logic-node logic-node-b">шт.</span>
         <span className="logic-node logic-node-c">₽</span>
-        <span className="logic-core">RULES</span>
+        <span className="logic-core">ПРАВИЛА</span>
         <i className="logic-line logic-line-a" />
         <i className="logic-line logic-line-b" />
         <i className="logic-line logic-line-c" />
@@ -68,7 +68,7 @@ function StoryVisual({ kind }: { kind: (typeof steps)[number]["visual"] }) {
     return (
       <div className="case-story-visual review" aria-hidden="true">
         <div className="review-sheet"><i/><i/><i/><i/></div>
-        <span className="review-chip">MANAGER</span>
+        <span className="review-chip">МЕНЕДЖЕР</span>
         <span className="review-ring" />
         <span className="review-approve">✓</span>
       </div>
@@ -76,25 +76,25 @@ function StoryVisual({ kind }: { kind: (typeof steps)[number]["visual"] }) {
   }
   return (
     <div className="case-story-visual output" aria-hidden="true">
-      <span className="output-doc output-doc-a">CLIENT</span>
-      <span className="output-doc output-doc-b">INSTALLER</span>
+      <span className="output-doc output-doc-a">КЛИЕНТ</span>
+      <span className="output-doc output-doc-b">МОНТАЖ</span>
       <i className="output-beam" />
-      <span className="output-core">APPROVED</span>
+      <span className="output-core">УТВЕРЖДЕНО</span>
     </div>
   );
 }
 
 export function CommercialCaseStory() {
   return (
-    <div className="case-story" aria-label="Commercial system process">
-      <div className="case-story-summary" aria-label="System evidence summary">
-        <span><b>INPUT</b> замер и зоны</span>
+    <div className="case-story" aria-label="Процесс коммерческой системы">
+      <div className="case-story-summary" aria-label="Краткая схема системы">
+        <span><b>ВВОД</b> замер и зоны</span>
         <i />
-        <span><b>LOGIC</b> расчёт и правила</span>
+        <span><b>ЛОГИКА</b> расчёт и правила</span>
         <i />
-        <span><b>CONTROL</b> manager approval</span>
+        <span><b>КОНТРОЛЬ</b> утверждение менеджером</span>
         <i />
-        <span><b>OUTPUT</b> документы и handoff</span>
+        <span><b>РЕЗУЛЬТАТ</b> документы и передача</span>
       </div>
 
       <div className="case-story-spine" aria-hidden="true"><span /></div>
