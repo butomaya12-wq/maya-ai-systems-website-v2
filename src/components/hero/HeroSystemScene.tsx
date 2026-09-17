@@ -4,6 +4,7 @@ import Link from "next/link";
 import { animated, to, useSpring } from "@react-spring/web";
 import type { PointerEvent as ReactPointerEvent } from "react";
 import { siteContent } from "@/data/site-content";
+import { HeroIntro } from "@/components/hero/HeroIntro";
 import { HeroWebGL } from "@/components/hero/HeroWebGL";
 
 export function HeroSystemScene() {
@@ -30,6 +31,7 @@ export function HeroSystemScene() {
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}
     >
+      <HeroIntro />
       <HeroWebGL />
       <div className="hero-noise" aria-hidden="true" />
       <div className="hero-ray" aria-hidden="true" />
