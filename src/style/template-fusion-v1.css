@@ -217,7 +217,6 @@ body {
   color: rgba(245,241,236,.92) !important;
 }
 
-/* Remove the old right-side axis: it competes with the hero and is not commercial proof. */
 .hero-focus .hero-axis {
   display: none !important;
 }
@@ -226,6 +225,225 @@ body {
   right: 4.5vw !important;
   bottom: 6.1rem !important;
   opacity: .58;
+}
+
+/* Cinematic intro: loader protects first paint while WebGL warms underneath. */
+.maya-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: #05060a;
+  color: var(--maya-ink);
+  transition: opacity .72s cubic-bezier(.2,.75,.2,1), transform .72s cubic-bezier(.2,.75,.2,1), filter .72s ease;
+}
+
+.maya-intro-exit {
+  opacity: 0;
+  transform: translateY(-2.5vh) scale(1.015);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.maya-intro-bloom {
+  position: absolute;
+  width: min(72vmin, 54rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(180,151,255,.35) 0%, rgba(112,61,219,.18) 36%, rgba(43,18,92,.06) 60%, transparent 74%);
+  filter: blur(34px);
+  animation: mayaIntroBloom 2.4s ease-in-out infinite alternate;
+}
+
+.maya-intro-orbit {
+  position: absolute;
+  width: min(31vmin, 21rem);
+  aspect-ratio: 1;
+  border: 1px solid rgba(226,214,255,.34);
+  border-radius: 50%;
+  box-shadow: 0 0 3rem rgba(154,115,240,.1);
+}
+
+.maya-intro-orbit-a {
+  transform: rotateX(68deg) rotateZ(-18deg);
+  animation: mayaIntroOrbitA 6s linear infinite;
+}
+
+.maya-intro-orbit-b {
+  width: min(24vmin, 16rem);
+  transform: rotateY(62deg) rotateZ(28deg);
+  border-color: rgba(255,255,255,.18);
+  animation: mayaIntroOrbitB 4.8s linear infinite reverse;
+}
+
+.maya-intro-core {
+  position: relative;
+  width: min(8vmin, 5.6rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  animation: mayaIntroCoreIn .95s cubic-bezier(.16,.85,.28,1) both;
+}
+
+.maya-intro-core-dot {
+  width: 24%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #f5f1ec;
+  box-shadow: 0 0 1rem #fff, 0 0 3rem rgba(175,141,255,.95), 0 0 6rem rgba(109,40,217,.65);
+}
+
+.maya-intro-core-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(245,241,236,.52);
+  border-radius: 50%;
+  box-shadow: inset 0 0 1rem rgba(154,115,240,.22), 0 0 2rem rgba(154,115,240,.2);
+}
+
+.maya-intro-copy {
+  position: absolute;
+  top: calc(50% + min(9vmin, 6.5rem));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+  font-family: "Helvetica Neue", "Maya Sans", Arial, sans-serif;
+  letter-spacing: .36em;
+  text-indent: .36em;
+  animation: mayaIntroCopyIn 1s .28s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.maya-intro-copy span:first-child {
+  font-size: .72rem;
+  font-weight: 400;
+}
+
+.maya-intro-copy span:last-child {
+  font-size: .48rem;
+  opacity: .44;
+}
+
+.maya-intro-status {
+  position: absolute;
+  left: 3rem;
+  right: 3rem;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(245,241,236,.42);
+  font-size: .48rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+.maya-intro-status i {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, rgba(255,255,255,.05), rgba(255,255,255,.35), rgba(255,255,255,.05));
+  transform-origin: left;
+  animation: mayaIntroLine 1.75s .18s cubic-bezier(.2,.8,.2,1) both;
+}
+
+/* Hero/UI enter after the loader clears. */
+html:not(.maya-intro-revealed) .site-header,
+html:not(.maya-intro-revealed) .hero-copy-cinematic,
+html:not(.maya-intro-revealed) .system-universe,
+html:not(.maya-intro-revealed) .proof-strip-cinematic,
+html:not(.maya-intro-revealed) .scroll-cue {
+  opacity: 0 !important;
+}
+
+html:not(.maya-intro-revealed) .site-header {
+  transform: translate(-50%, -12px) !important;
+}
+
+html.maya-intro-revealed .site-header {
+  animation: mayaHeaderReveal .8s cubic-bezier(.2,.8,.2,1) both;
+}
+
+html.maya-intro-revealed .hero-copy-cinematic {
+  animation: mayaHeroCopyReveal 1s .06s cubic-bezier(.16,.82,.24,1) both;
+}
+
+html.maya-intro-revealed .system-universe {
+  animation: mayaSystemsReveal 1.1s .18s cubic-bezier(.16,.82,.24,1) both;
+}
+
+html.maya-intro-revealed .proof-strip-cinematic {
+  animation: mayaProofReveal .9s .32s cubic-bezier(.16,.82,.24,1) both;
+}
+
+html.maya-intro-revealed .scroll-cue {
+  animation: mayaProofReveal .9s .5s cubic-bezier(.16,.82,.24,1) both;
+}
+
+@keyframes mayaIntroBloom {
+  from { opacity: .58; transform: scale(.92); }
+  to { opacity: .9; transform: scale(1.08); }
+}
+
+@keyframes mayaIntroOrbitA {
+  to { transform: rotateX(68deg) rotateZ(342deg); }
+}
+
+@keyframes mayaIntroOrbitB {
+  to { transform: rotateY(62deg) rotateZ(388deg); }
+}
+
+@keyframes mayaIntroCoreIn {
+  from { opacity: 0; transform: scale(.55); filter: blur(12px); }
+  to { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+@keyframes mayaIntroCopyIn {
+  from { opacity: 0; transform: translateY(10px); filter: blur(8px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes mayaIntroLine {
+  from { transform: scaleX(0); opacity: .2; }
+  to { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes mayaHeaderReveal {
+  from { opacity: 0; transform: translate(-50%, -12px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes mayaHeroCopyReveal {
+  from { opacity: 0; transform: translateY(-42%) translateY(28px); filter: blur(14px); }
+  to { opacity: 1; transform: translateY(-46%); filter: blur(0); }
+}
+
+@keyframes mayaSystemsReveal {
+  from { opacity: 0; filter: blur(12px); }
+  to { opacity: 1; filter: blur(0); }
+}
+
+@keyframes mayaProofReveal {
+  from { opacity: 0; transform: translateY(14px); filter: blur(8px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .maya-intro-bloom,
+  .maya-intro-orbit-a,
+  .maya-intro-orbit-b,
+  .maya-intro-core,
+  .maya-intro-copy,
+  .maya-intro-status i,
+  html.maya-intro-revealed .site-header,
+  html.maya-intro-revealed .hero-copy-cinematic,
+  html.maya-intro-revealed .system-universe,
+  html.maya-intro-revealed .proof-strip-cinematic,
+  html.maya-intro-revealed .scroll-cue {
+    animation: none !important;
+  }
 }
 
 @media (max-width: 900px) {
@@ -303,5 +521,15 @@ body {
 
   .scroll-cue {
     display: none !important;
+  }
+
+  .maya-intro-status {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .maya-intro-status span:last-child {
+    display: none;
   }
 }
