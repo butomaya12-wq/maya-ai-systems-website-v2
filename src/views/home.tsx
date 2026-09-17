@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { HeroSystemScene } from "@/components/hero/HeroSystemScene";
 import { HeroCaseBridge } from "@/components/hero/HeroCaseBridge";
+import { CommercialCaseStory } from "@/components/case/CommercialCaseStory";
 import { Reveal } from "@/components/motion/Reveal";
 import { MayaAtmosphere } from "@/components/scene/MayaAtmosphere";
-import { ProjectVisual, SystemClassVisual, WorkflowStageVisual } from "@/components/visual/VisualBlocks";
+import { ProjectVisual, SystemClassVisual } from "@/components/visual/VisualBlocks";
 import { siteContent } from "@/data/site-content";
 
 const projectLinks = [
@@ -40,26 +41,14 @@ export function HomeView() {
           </div>
         </Reveal>
 
-        <div className="workflow-track" aria-hidden="true"><span /></div>
-        <div className="stage-grid stage-grid-cinematic">
-          {siteContent.commercialCase.stages.map(([n, title, text], index) => (
-            <Reveal key={n} delay={index * 45}>
-              <article className="workflow-card">
-                <div className="workflow-number">{n}</div>
-                <WorkflowStageVisual index={index} />
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+        <CommercialCaseStory />
 
         <Reveal className="case-proof-bar">
           <span>Полевой workflow</span><i />
           <span>Расчётный контур</span><i />
           <span>Workflow менеджера</span><i />
           <span>Locked snapshot</span><i />
-          <span>3 role-specific PDFs</span><i />
+          <span>Role-specific PDFs</span><i />
           <span>ADMIN / MEASURER / MANAGER</span>
         </Reveal>
       </section>
