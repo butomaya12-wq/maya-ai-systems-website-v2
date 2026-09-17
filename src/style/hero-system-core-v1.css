@@ -13,7 +13,7 @@
 
 .hero-focus::before {
   background:
-    linear-gradient(90deg, rgba(3,4,9,.96) 0%, rgba(3,4,9,.9) 37%, rgba(3,4,9,.2) 64%, rgba(3,4,9,.08) 100%),
+    linear-gradient(90deg, rgba(3,4,9,.96) 0%, rgba(3,4,9,.9) 34%, rgba(3,4,9,.32) 55%, rgba(3,4,9,.06) 78%, rgba(3,4,9,.08) 100%),
     radial-gradient(circle at 77% 48%, rgba(130,102,255,.12), transparent 30%) !important;
 }
 
@@ -121,22 +121,23 @@
   border-color: rgba(213,205,241,.35) !important;
 }
 
+/* Keep the WebGL canvas full-screen. Cropping the canvas to the right side also cropped the 3D camera frustum,
+   which pushed the System Core out of view. The object itself is positioned on the right in Three.js. */
 .hero-focus .hero-particle-canvas {
+  position: absolute !important;
   z-index: 5 !important;
   opacity: 1 !important;
   mix-blend-mode: screen !important;
-  left: 39vw !important;
-  top: 7.2rem !important;
-  right: 0 !important;
-  bottom: 4.8rem !important;
-  width: 61vw !important;
-  height: auto !important;
-  filter: drop-shadow(0 0 4rem rgba(128,91,255,.12));
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  filter: drop-shadow(0 0 4rem rgba(128,91,255,.16));
 }
 
 .hero-focus .system-universe {
   z-index: 15 !important;
-  inset: 7rem 2.6vw 5.8rem 47vw !important;
+  inset: 7rem 2.8vw 5.8rem 52vw !important;
+  overflow: visible !important;
 }
 .hero-focus .system-node {
   width: auto !important;
@@ -161,9 +162,9 @@
   height: .28rem !important;
   transform: translateY(50%);
 }
-.hero-focus .system-node-1 { left: 16% !important; top: 15% !important; }
-.hero-focus .system-node-2 { left: 76% !important; top: 47% !important; }
-.hero-focus .system-node-3 { left: 69% !important; top: 76% !important; }
+.hero-focus .system-node-1 { left: 4% !important; top: 17% !important; }
+.hero-focus .system-node-2 { left: 60% !important; top: 48% !important; }
+.hero-focus .system-node-3 { left: 51% !important; top: 77% !important; }
 
 .hero-focus .hero-axis { display: none !important; }
 .hero-focus .hero-foreground-debris { z-index: 3 !important; opacity: .36; }
@@ -208,8 +209,7 @@
   .site-header .ghost-button { display: none !important; }
   .hero-copy-cinematic { width: 51vw !important; left: 4.5vw !important; }
   .hero-copy-cinematic h1 { font-size: clamp(3.6rem, 6.1vw, 5.8rem) !important; }
-  .hero-focus .hero-particle-canvas { left: 42vw !important; width: 58vw !important; }
-  .hero-focus .system-universe { inset-left: 49vw !important; }
+  .hero-focus .system-universe { inset: 7rem 2vw 5.8rem 50vw !important; }
 }
 
 @media (max-width: 767px) {
@@ -237,11 +237,9 @@
   .hero-copy-cinematic .solid-button,
   .hero-copy-cinematic .ghost-button { min-width: 9.6rem !important; height: 3rem !important; }
   .hero-focus .hero-particle-canvas {
-    left: 0 !important;
-    top: auto !important;
-    bottom: 6rem !important;
-    width: 100vw !important;
-    height: 24rem !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
   }
   .hero-focus .system-universe {
     inset: auto 1rem 7rem 1rem !important;
