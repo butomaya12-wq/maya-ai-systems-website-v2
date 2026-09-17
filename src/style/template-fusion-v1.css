@@ -1,0 +1,307 @@
+/* Template fusion v1
+   Sources of inspiration: Lumea / Noema / Superconscious / New Era.
+   Goal: premium cinematic shell without changing commercial content or proof structure.
+*/
+
+:root {
+  --maya-void: #05060a;
+  --maya-ink: #f5f1ec;
+  --maya-muted: rgba(245,241,236,.66);
+  --maya-violet: #9a73f0;
+  --maya-violet-soft: rgba(154,115,240,.22);
+  --maya-glass: rgba(18,18,24,.42);
+  --maya-glass-border: rgba(255,255,255,.14);
+}
+
+body {
+  background: var(--maya-void);
+}
+
+/* Floating Lumea-style navigation shell */
+.site-header {
+  top: 1rem !important;
+  left: 50% !important;
+  width: min(92vw, 74rem) !important;
+  height: 3.55rem !important;
+  padding: .28rem !important;
+  transform: translateX(-50%);
+  border: 1px solid var(--maya-glass-border) !important;
+  border-radius: 999px !important;
+  background: rgba(10,10,14,.46) !important;
+  backdrop-filter: blur(28px) saturate(130%) !important;
+  box-shadow: 0 1rem 4rem rgba(0,0,0,.24) !important;
+}
+
+.site-header .brand {
+  padding-left: 1.05rem;
+  letter-spacing: .26em !important;
+}
+
+.site-header .brand span {
+  opacity: .48 !important;
+}
+
+.site-header nav {
+  gap: .15rem !important;
+  padding: .2rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,.035);
+}
+
+.site-header nav a {
+  padding: .68rem 1rem;
+  border-radius: 999px;
+  transition: background .25s ease, color .25s ease, opacity .25s ease;
+}
+
+.site-header nav a:hover {
+  background: rgba(255,255,255,.08);
+}
+
+.site-header > .ghost-button {
+  min-width: auto !important;
+  height: 2.75rem !important;
+  padding: 0 1.2rem !important;
+  border-radius: 999px !important;
+  background: rgba(245,241,236,.94) !important;
+  color: #07031a !important;
+  border: 0 !important;
+}
+
+/* Hero becomes an editorial/WebGL stage rather than a conventional landing block */
+.hero-focus {
+  min-height: 100svh !important;
+  height: 100svh !important;
+  border-bottom: 0 !important;
+  background:
+    radial-gradient(80% 76% at 67% 44%, rgba(109,40,217,.18), transparent 58%),
+    radial-gradient(46% 48% at 81% 18%, rgba(154,115,240,.10), transparent 72%),
+    linear-gradient(180deg, #08090d 0%, #05060a 100%) !important;
+}
+
+.hero-focus::before {
+  background:
+    linear-gradient(90deg, rgba(5,6,10,.92) 0%, rgba(5,6,10,.62) 34%, rgba(5,6,10,.08) 63%, rgba(5,6,10,.38) 100%),
+    radial-gradient(circle at 65% 45%, rgba(154,115,240,.13), transparent 34%) !important;
+}
+
+.hero-focus::after {
+  box-shadow:
+    inset 0 8rem 9rem rgba(0,0,0,.22),
+    inset 0 -10rem 12rem rgba(0,0,0,.45) !important;
+}
+
+.hero-focus .hero-particle-canvas {
+  opacity: .58 !important;
+  mix-blend-mode: screen;
+  filter: saturate(1.08) contrast(1.03);
+}
+
+.hero-copy-cinematic {
+  left: 4.5vw !important;
+  top: 51% !important;
+  width: min(43vw, 45rem) !important;
+  transform: translateY(-46%) !important;
+}
+
+.hero-copy-cinematic .section-index {
+  position: static !important;
+  margin-bottom: 1.5rem !important;
+  padding-left: 0 !important;
+  font-size: .58rem !important;
+  letter-spacing: .34em !important;
+  color: rgba(245,241,236,.56) !important;
+}
+
+.hero-copy-cinematic .section-index::before {
+  display: none;
+}
+
+.hero-copy-cinematic h1 {
+  max-width: 10.8ch !important;
+  font-family: "Helvetica Neue", "Maya Sans", Arial, sans-serif !important;
+  font-size: clamp(4.6rem, 6.45vw, 8.7rem) !important;
+  line-height: .88 !important;
+  font-weight: 200 !important;
+  letter-spacing: -.058em !important;
+  color: var(--maya-ink) !important;
+  text-shadow: 0 1.4rem 4rem rgba(0,0,0,.36) !important;
+}
+
+.hero-copy-cinematic .hero-body {
+  max-width: 35rem !important;
+  margin-top: 1.65rem !important;
+  font-size: clamp(.96rem, 1.12vw, 1.2rem) !important;
+  line-height: 1.52 !important;
+  color: var(--maya-muted) !important;
+}
+
+.hero-copy-cinematic .actions {
+  margin-top: 2rem !important;
+}
+
+.hero-copy-cinematic .solid-button,
+.hero-copy-cinematic .ghost-button {
+  min-width: 10.8rem !important;
+  height: 3.2rem !important;
+  border-radius: 999px !important;
+  letter-spacing: .16em !important;
+  font-size: .62rem !important;
+}
+
+.hero-copy-cinematic .solid-button {
+  background: var(--maya-ink) !important;
+  color: #080812 !important;
+}
+
+.hero-copy-cinematic .ghost-button {
+  background: rgba(255,255,255,.035) !important;
+  border-color: rgba(255,255,255,.18) !important;
+  backdrop-filter: blur(18px);
+}
+
+/* System nodes become quiet, floating glass instruments. */
+.hero-focus .system-universe {
+  inset: 7.4rem 4.5vw 6.5rem 42vw !important;
+}
+
+.hero-focus .system-node {
+  width: 7.9rem !important;
+  height: 2.9rem !important;
+  border-radius: 999px !important;
+  clip-path: none !important;
+  border: 1px solid rgba(255,255,255,.15) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.025)) !important;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.15),
+    0 1rem 3rem rgba(0,0,0,.18),
+    0 0 2rem rgba(154,115,240,.06) !important;
+  backdrop-filter: blur(22px) saturate(125%) !important;
+  font-size: .54rem !important;
+  letter-spacing: .22em !important;
+  color: rgba(245,241,236,.78) !important;
+}
+
+.hero-focus .system-node::before {
+  display: none !important;
+}
+
+.hero-focus .system-node::after {
+  right: .42rem !important;
+  bottom: 50% !important;
+  width: .22rem !important;
+  height: .22rem !important;
+  transform: translateY(50%);
+  background: #cbb7ff !important;
+  box-shadow: 0 0 .8rem rgba(154,115,240,.9) !important;
+}
+
+/* Make the proof strip read as evidence, not decoration. */
+.proof-strip-cinematic {
+  left: 4.5vw !important;
+  right: 4.5vw !important;
+  bottom: 2rem !important;
+  min-height: 3.1rem;
+  padding: .75rem 1rem !important;
+  border: 1px solid rgba(255,255,255,.09) !important;
+  border-radius: 999px !important;
+  background: rgba(10,10,14,.35) !important;
+  backdrop-filter: blur(20px) saturate(120%);
+}
+
+.proof-strip-cinematic span {
+  color: rgba(245,241,236,.58) !important;
+}
+
+.proof-strip-cinematic .proof-label {
+  color: rgba(245,241,236,.92) !important;
+}
+
+/* Remove the old right-side axis: it competes with the hero and is not commercial proof. */
+.hero-focus .hero-axis {
+  display: none !important;
+}
+
+.scroll-cue {
+  right: 4.5vw !important;
+  bottom: 6.1rem !important;
+  opacity: .58;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    width: calc(100vw - 1.5rem) !important;
+  }
+
+  .site-header nav {
+    display: none !important;
+  }
+
+  .site-header .brand span {
+    display: none;
+  }
+
+  .hero-copy-cinematic {
+    left: 1.25rem !important;
+    right: 1.25rem !important;
+    top: 48% !important;
+    width: auto !important;
+  }
+
+  .hero-copy-cinematic h1 {
+    max-width: 9ch !important;
+    font-size: clamp(3.6rem, 14vw, 6.7rem) !important;
+  }
+
+  .hero-copy-cinematic .hero-body {
+    max-width: 28rem !important;
+  }
+
+  .hero-focus .system-universe {
+    inset: 7rem -2rem 5rem 28vw !important;
+    opacity: .5;
+  }
+
+  .proof-strip-cinematic {
+    left: 1rem !important;
+    right: 1rem !important;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+
+  .proof-strip-cinematic::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header > .ghost-button {
+    padding: 0 .9rem !important;
+  }
+
+  .hero-copy-cinematic {
+    top: 47% !important;
+  }
+
+  .hero-copy-cinematic h1 {
+    max-width: 8.5ch !important;
+    font-size: clamp(3rem, 16vw, 4.9rem) !important;
+  }
+
+  .hero-copy-cinematic .hero-body {
+    font-size: .92rem !important;
+  }
+
+  .hero-focus .system-universe {
+    opacity: .34;
+  }
+
+  .proof-strip-cinematic {
+    bottom: 1rem !important;
+  }
+
+  .scroll-cue {
+    display: none !important;
+  }
+}
