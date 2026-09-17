@@ -1,0 +1,430 @@
+.process-film,
+.principles-film {
+  position: relative;
+  overflow: hidden;
+}
+
+.process-film {
+  padding-top: clamp(7rem, 12vw, 13rem) !important;
+  padding-bottom: clamp(7rem, 11vw, 12rem) !important;
+  background:
+    radial-gradient(42% 36% at 72% 42%, rgba(82, 50, 180, .12), transparent 72%),
+    linear-gradient(180deg, rgba(5, 6, 10, 0) 0%, rgba(7, 7, 12, .82) 35%, rgba(5, 6, 10, 0) 100%);
+}
+
+.process-film::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.026) 1px, transparent 1px);
+  background-size: 5rem 5rem;
+  mask-image: radial-gradient(circle at 58% 52%, #000 15%, transparent 76%);
+}
+
+.process-film-head,
+.principles-film-head {
+  position: relative;
+  z-index: 2;
+}
+
+.process-film-title-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: clamp(1.5rem, 5vw, 6rem);
+  align-items: end;
+  margin-top: 2.2rem;
+}
+
+.process-film-title-row h2 {
+  margin: 0;
+  max-width: 10ch;
+  font-size: clamp(4.2rem, 7vw, 9rem);
+  line-height: .88;
+  font-weight: 250;
+  letter-spacing: -.06em;
+  color: #f5f1ec;
+}
+
+.process-film-title-row .process-film-title-muted {
+  justify-self: end;
+  max-width: 9ch;
+  text-align: right;
+  color: rgba(245,241,236,.3);
+}
+
+.process-film-intro {
+  width: min(45rem, 70vw);
+  margin: 2.2rem 0 0 auto;
+  color: rgba(245,241,236,.56);
+  font-size: clamp(1rem, 1.3vw, 1.3rem);
+  line-height: 1.55;
+}
+
+.process-rail-wrap {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(4.5rem, 8vw, 8rem);
+}
+
+.process-rail {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.process-rail-line {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  top: 5.6rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,.04), rgba(161,119,255,.8), rgba(255,255,255,.05));
+  box-shadow: 0 0 1.3rem rgba(154,115,240,.3);
+}
+
+.process-rail-line span {
+  display: block;
+  width: 16%;
+  height: 100%;
+  background: #f5f1ec;
+  box-shadow: 0 0 1rem #fff, 0 0 2.5rem rgba(154,115,240,.85);
+  animation: mayaProcessSignal 5s linear infinite;
+}
+
+.process-node-card {
+  position: relative;
+  min-height: 19rem;
+  padding: 1rem .8rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.process-node-index {
+  align-self: flex-start;
+  color: rgba(245,241,236,.34);
+  font-size: .5rem;
+  letter-spacing: .18em;
+}
+
+.process-node-core {
+  position: relative;
+  z-index: 2;
+  width: 9.1rem;
+  aspect-ratio: 1;
+  margin-top: .55rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 36% 30%, rgba(255,255,255,.12), transparent 32%),
+    rgba(12,12,20,.6);
+  backdrop-filter: blur(20px) saturate(125%);
+  box-shadow: inset 0 0 2rem rgba(154,115,240,.08), 0 1.2rem 3rem rgba(0,0,0,.24);
+}
+
+.process-node-core::before,
+.process-node-core::after {
+  content: "";
+  position: absolute;
+  inset: .65rem;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 50%;
+}
+
+.process-node-core::after {
+  inset: 1.35rem;
+  border-color: rgba(154,115,240,.18);
+}
+
+.process-node-core span {
+  position: relative;
+  z-index: 2;
+  color: rgba(245,241,236,.9);
+  font-size: clamp(.66rem, .72vw, .8rem);
+  letter-spacing: .2em;
+}
+
+.process-node-orbit {
+  position: absolute;
+  top: 2.6rem;
+  width: 11rem;
+  height: 4.8rem;
+  border: 1px solid rgba(182,145,255,.18);
+  border-radius: 50%;
+  transform: rotate(-11deg);
+}
+
+.process-node-card:nth-child(even) .process-node-orbit {
+  transform: rotate(13deg);
+}
+
+.process-node-card-accent .process-node-core {
+  border-color: rgba(202,179,255,.46);
+  background: radial-gradient(circle at 50% 50%, rgba(154,115,240,.26), rgba(11,10,18,.72) 58%);
+  box-shadow: inset 0 0 3rem rgba(154,115,240,.13), 0 0 3.5rem rgba(154,115,240,.2);
+}
+
+.process-node-card-accent .process-node-core::before {
+  box-shadow: 0 0 2rem rgba(154,115,240,.2);
+}
+
+.process-node-card > p {
+  max-width: 13.5rem;
+  margin-top: 1.15rem;
+  color: rgba(245,241,236,.48);
+  font-size: clamp(.76rem, .82vw, .92rem);
+  line-height: 1.45;
+}
+
+.process-node-arrow {
+  position: absolute;
+  top: 5.1rem;
+  right: -.72rem;
+  z-index: 5;
+  color: rgba(245,241,236,.35);
+  font-style: normal;
+  font-size: .9rem;
+}
+
+.process-film-rule {
+  margin-top: 1.8rem;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 999px;
+  background: rgba(255,255,255,.025);
+  backdrop-filter: blur(16px);
+}
+
+.process-film-rule p {
+  color: rgba(245,241,236,.48);
+  font-size: clamp(.8rem, .9vw, 1rem);
+  line-height: 1.4;
+}
+
+.process-film-rule strong {
+  color: rgba(245,241,236,.9);
+  font-weight: 450;
+}
+
+.process-rule-dot {
+  flex: 0 0 auto;
+  width: .45rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #d9c7ff;
+  box-shadow: 0 0 .8rem rgba(154,115,240,.9);
+}
+
+.principles-film {
+  padding-top: clamp(6rem, 10vw, 11rem) !important;
+  padding-bottom: clamp(7rem, 11vw, 12rem) !important;
+}
+
+.principles-film-title-row {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  align-items: end;
+}
+
+.principles-film-title-row h2 {
+  margin: 0;
+  font-size: clamp(4.4rem, 7.5vw, 9.5rem);
+  line-height: .86;
+  letter-spacing: -.06em;
+  font-weight: 250;
+}
+
+.principles-film-title-row p {
+  max-width: 28rem;
+  padding-bottom: .6rem;
+  color: rgba(245,241,236,.5);
+  font-size: clamp(.9rem, 1.05vw, 1.05rem);
+  line-height: 1.5;
+}
+
+.principles-film-grid {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(3.5rem, 6vw, 6.5rem);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.principle-film-card {
+  position: relative;
+  min-height: 20rem;
+  padding: 1.4rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1.65rem;
+  border: 1px solid rgba(255,255,255,.1);
+  background:
+    radial-gradient(70% 80% at 70% 25%, rgba(100,61,210,.13), transparent 70%),
+    rgba(255,255,255,.025);
+  backdrop-filter: blur(22px) saturate(120%);
+  box-shadow: inset 0 1px rgba(255,255,255,.08), 0 1.5rem 4rem rgba(0,0,0,.18);
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), border-color .45s ease, background .45s ease;
+}
+
+.principle-film-card:hover {
+  transform: translateY(-.45rem);
+  border-color: rgba(196,171,255,.25);
+  background:
+    radial-gradient(70% 80% at 70% 25%, rgba(124,77,235,.18), transparent 70%),
+    rgba(255,255,255,.035);
+}
+
+.principle-film-ring {
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background-image: linear-gradient(90deg, rgba(255,255,255,.03), rgba(195,169,255,.42), rgba(255,255,255,.03));
+  background-size: 200% 100%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: mayaPrincipleRing 5s linear infinite;
+  pointer-events: none;
+}
+
+.principle-film-top,
+.principle-film-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.principle-film-top > span,
+.principle-film-footer {
+  color: rgba(245,241,236,.36);
+  font-size: .5rem;
+  letter-spacing: .18em;
+}
+
+.principle-film-top i {
+  width: .46rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(245,241,236,.9);
+  box-shadow: 0 0 .8rem rgba(154,115,240,.7);
+}
+
+.principle-film-card h3 {
+  margin: auto 0;
+  max-width: 11ch;
+  color: #f5f1ec;
+  font-size: clamp(2rem, 2.9vw, 3.8rem);
+  line-height: .98;
+  font-weight: 300;
+  letter-spacing: -.04em;
+}
+
+.principle-film-footer {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+
+@keyframes mayaProcessSignal {
+  0% { transform: translateX(-20%); opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { transform: translateX(620%); opacity: 0; }
+}
+
+@keyframes mayaPrincipleRing {
+  to { background-position: 200% 0; }
+}
+
+@media (max-width: 1100px) {
+  .process-rail {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.3rem;
+  }
+  .process-rail-line,
+  .process-node-arrow { display: none; }
+  .principles-film-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .process-film-title-row {
+    grid-template-columns: 1fr;
+    gap: .7rem;
+  }
+  .process-film-title-row h2,
+  .process-film-title-row .process-film-title-muted {
+    max-width: 9ch;
+    justify-self: start;
+    text-align: left;
+    font-size: clamp(3.3rem, 15vw, 5.6rem);
+  }
+  .process-film-intro {
+    width: 100%;
+    margin-left: 0;
+  }
+  .process-rail {
+    grid-template-columns: 1fr;
+  }
+  .process-node-card {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 5.4rem 1fr;
+    gap: 1rem 1.2rem;
+    align-items: center;
+    text-align: left;
+    padding: 1rem 0;
+  }
+  .process-node-index { display: none; }
+  .process-node-core {
+    grid-row: 1 / span 2;
+    width: 5.4rem;
+    margin: 0;
+  }
+  .process-node-orbit { display:none; }
+  .process-node-card > p {
+    max-width: none;
+    margin: 0;
+  }
+  .process-node-core span { font-size: .55rem; }
+  .process-film-rule {
+    border-radius: 1.2rem;
+    align-items: flex-start;
+  }
+  .principles-film-title-row {
+    display: block;
+  }
+  .principles-film-title-row h2 {
+    font-size: clamp(3.8rem, 17vw, 6rem);
+  }
+  .principles-film-title-row p {
+    margin-top: 1.4rem;
+  }
+  .principles-film-grid {
+    grid-template-columns: 1fr;
+  }
+  .principle-film-card {
+    min-height: 15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-rail-line span,
+  .principle-film-ring { animation: none !important; }
+  .principle-film-card { transition: none !important; }
+}
