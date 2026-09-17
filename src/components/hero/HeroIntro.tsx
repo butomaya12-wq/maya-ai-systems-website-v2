@@ -50,13 +50,13 @@ export function HeroIntro() {
         <span className="maya-intro-core-ring" />
       </div>
       <div className="maya-intro-copy">
-        <span>MAYA</span>
-        <span>AI SYSTEMS</span>
+        <span>МАЙЯ</span>
+        <span>БИЗНЕС-СИСТЕМЫ · AI · АВТОМАТИЗАЦИЯ</span>
       </div>
       <div className="maya-intro-status">
-        <span>STRUCTURE</span>
+        <span>СТРУКТУРА</span>
         <i />
-        <span>SIGNAL → SYSTEM → RESULT</span>
+        <span>СИГНАЛ → СИСТЕМА → РЕЗУЛЬТАТ</span>
       </div>
     </div>
   );
