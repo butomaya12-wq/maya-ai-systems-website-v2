@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HeroSystemScene } from "@/components/hero/HeroSystemScene";
+import { HeroCaseBridge } from "@/components/hero/HeroCaseBridge";
 import { Reveal } from "@/components/motion/Reveal";
 import { MayaAtmosphere } from "@/components/scene/MayaAtmosphere";
 import { ProjectVisual, SystemClassVisual, WorkflowStageVisual } from "@/components/visual/VisualBlocks";
@@ -24,6 +25,7 @@ export function HomeView() {
       </header>
 
       <HeroSystemScene />
+      <HeroCaseBridge />
 
       <section id="work" className="case case-cinematic section-shell">
         <Reveal>
