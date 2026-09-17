@@ -43,7 +43,8 @@ export function HeroSystemScene() {
       </div>
 
       <div className="hero-copy hero-copy-cinematic">
-        <p className="section-index">01 · FROM COMPLEXITY TO CLARITY</p>
+        <p className="section-index">01 · ОТ СЛОЖНОСТИ К СИСТЕМЕ</p>
+        <p className="hero-eyebrow">{siteContent.hero.eyebrow}</p>
         <h1>{siteContent.hero.title}</h1>
         <p className="hero-body">{siteContent.hero.body}</p>
         <div className="actions">
@@ -55,7 +56,7 @@ export function HeroSystemScene() {
       <animated.div
         className="system-universe"
         style={{ transform: to([mx, my], (x, y) => `translate3d(${x * 0.26}rem, ${y * 0.14}rem, 0)`) }}
-        aria-label="Structured system graph"
+        aria-label="Структурная схема системы"
       >
         {siteContent.hero.modules.map((module, index) => (
           <animated.span
@@ -71,17 +72,17 @@ export function HeroSystemScene() {
       </animated.div>
 
       <div className="hero-axis" aria-hidden="true">
-        <span>02<br />STRUCTURE</span>
-        <span>03<br />SYSTEM</span>
-        <span>04<br />REAL IMPACT</span>
+        <span>02<br />СТРУКТУРА</span>
+        <span>03<br />СИСТЕМА</span>
+        <span>04<br />РЕЗУЛЬТАТ</span>
       </div>
 
       <div className="proof-strip proof-strip-cinematic">
-        <span className="proof-label">SELECTED PROOF</span>
+        <span className="proof-label">ПОДТВЕРЖДЁННЫЙ ОПЫТ</span>
         {siteContent.hero.proof.map((item) => <span key={item}>● {item}</span>)}
       </div>
 
-      <div className="scroll-cue" aria-hidden="true"><span>SCROLL TO EXPLORE</span><i /></div>
+      <div className="scroll-cue" aria-hidden="true"><span>ЛИСТАЙТЕ ДАЛЬШЕ</span><i /></div>
     </section>
   );
 }
