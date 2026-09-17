@@ -1,0 +1,212 @@
+/* Rhythm pass v1 — reduce mid-page competition and strengthen the final cadence. */
+
+/* PROCESS: keep it strong, but tighten the vertical read. */
+.process-film {
+  padding-top: clamp(6rem, 9vw, 9rem) !important;
+  padding-bottom: clamp(5.5rem, 8vw, 8rem) !important;
+}
+
+.process-film-title-row {
+  margin-top: 1.4rem !important;
+}
+
+.process-film-intro {
+  margin-top: 1.4rem !important;
+}
+
+.process-rail-wrap {
+  margin-top: clamp(2.8rem, 4.8vw, 4.8rem) !important;
+}
+
+.process-node-card {
+  min-height: 15.5rem !important;
+}
+
+.process-node-core {
+  width: 7.8rem !important;
+}
+
+.process-node-orbit {
+  top: 2.2rem !important;
+  width: 9.4rem !important;
+  height: 4rem !important;
+}
+
+.process-rail-line {
+  top: 4.9rem !important;
+}
+
+.process-node-arrow {
+  top: 4.45rem !important;
+}
+
+.process-node-card > p {
+  margin-top: .9rem !important;
+}
+
+.process-film-rule {
+  margin-top: 1.1rem !important;
+}
+
+/* PRINCIPLES: still cinematic, but clearly secondary to paid proof + process. */
+.principles-film {
+  padding-top: clamp(4.8rem, 7vw, 7rem) !important;
+  padding-bottom: clamp(5.2rem, 7.5vw, 7.5rem) !important;
+}
+
+.principles-film-title-row {
+  margin-top: 1.2rem !important;
+}
+
+.principles-film-title-row h2 {
+  font-size: clamp(3.4rem, 5.4vw, 6.8rem) !important;
+}
+
+.principles-film-grid {
+  margin-top: clamp(2.4rem, 4vw, 4rem) !important;
+  gap: .8rem !important;
+}
+
+.principle-film-card {
+  min-height: 13rem !important;
+  padding: 1.15rem !important;
+  border-radius: 1.25rem !important;
+}
+
+.principle-film-card h3 {
+  max-width: 14ch !important;
+  font-size: clamp(1.5rem, 2vw, 2.5rem) !important;
+  line-height: 1.02 !important;
+}
+
+.principle-film-footer {
+  padding-top: .75rem !important;
+}
+
+.principle-film-card:hover {
+  transform: translateY(-.25rem) !important;
+}
+
+/* NOTES: deliberately quieter — supporting content, not another hero. */
+.notes-cinematic {
+  padding-top: clamp(4.5rem, 6vw, 6rem) !important;
+  padding-bottom: clamp(4.5rem, 6vw, 6rem) !important;
+}
+
+.notes-cinematic .compact-editorial {
+  max-width: 72rem;
+}
+
+.notes-cinematic h2 {
+  max-width: 12ch;
+  font-size: clamp(2.6rem, 4vw, 4.8rem) !important;
+  line-height: .96 !important;
+}
+
+.notes-preview-grid {
+  margin-top: 1.8rem !important;
+  gap: .6rem !important;
+}
+
+.notes-preview-grid article {
+  min-height: 7.5rem !important;
+  padding: .95rem 1rem !important;
+  border-radius: .7rem !important;
+  background: rgba(255,255,255,.015) !important;
+}
+
+.notes-preview-grid h3 {
+  font-size: .92rem !important;
+}
+
+.notes-preview-grid p {
+  font-size: .69rem !important;
+}
+
+/* ABOUT: preserve statement scale but give the explanatory copy more presence. */
+.about-cinematic {
+  padding-top: clamp(6.5rem, 9vw, 9.5rem) !important;
+  padding-bottom: clamp(7rem, 10vw, 10rem) !important;
+}
+
+.about-cinematic .about-note {
+  max-width: 40rem !important;
+  font-size: clamp(.98rem, 1.15vw, 1.16rem) !important;
+  line-height: 1.62 !important;
+  color: rgba(245,241,236,.66) !important;
+}
+
+/* CONTACT: create a distinct final-act pause and stronger terminal frame. */
+.contact-cinematic {
+  position: relative;
+  margin-top: clamp(3rem, 5vw, 5rem);
+  padding-top: clamp(8rem, 12vw, 13rem) !important;
+  padding-bottom: clamp(9rem, 13vw, 14rem) !important;
+  background:
+    radial-gradient(48% 52% at 50% 20%, rgba(102,63,220,.12), transparent 72%),
+    linear-gradient(180deg, rgba(5,6,10,0), rgba(7,7,12,.62) 35%, rgba(5,6,10,.2));
+}
+
+.contact-cinematic::before {
+  content: "";
+  position: absolute;
+  left: 4.5vw;
+  right: 4.5vw;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+}
+
+.contact-cinematic h2 {
+  max-width: 12ch;
+}
+
+.contact-cinematic .contact-note {
+  max-width: 38rem;
+  margin-top: 1.4rem;
+  color: rgba(245,241,236,.6);
+}
+
+.contact-cinematic .solid-button {
+  margin-top: 2rem;
+}
+
+@media (max-width: 1100px) {
+  .process-node-card { min-height: 14rem !important; }
+  .principle-film-card { min-height: 12rem !important; }
+}
+
+@media (max-width: 760px) {
+  .process-film,
+  .principles-film,
+  .notes-cinematic,
+  .about-cinematic,
+  .contact-cinematic {
+    padding-top: 4.5rem !important;
+    padding-bottom: 4.5rem !important;
+  }
+
+  .process-node-card {
+    min-height: auto !important;
+  }
+
+  .process-node-core {
+    width: 5.2rem !important;
+  }
+
+  .principles-film-title-row h2 {
+    font-size: clamp(3.3rem, 15vw, 5.4rem) !important;
+  }
+
+  .principle-film-card {
+    min-height: 10.5rem !important;
+  }
+
+  .notes-cinematic h2 {
+    font-size: clamp(2.4rem, 11vw, 3.8rem) !important;
+  }
+
+  .contact-cinematic {
+    margin-top: 1rem;
+  }
+}
